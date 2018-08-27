@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "Example App">
+    ]>
 <resources>
 
-    <string name="app_name">WebView App</string>
+    <string name="app_name">&appname;</string>
+    <string name="welcome_message">Selamat datang di &appname;</string>
 
 </resources>
