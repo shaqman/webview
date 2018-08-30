@@ -6,5 +6,8 @@
 
     <string name="app_name">&appname;</string>
     <string name="welcome_message">Selamat datang di &appname;</string>
+    <string name="request_error_dialog_title">Koneksi bermasalah</string>
+    <string name="request_error_dialog_message">Aplikasi perlu koneksi internet untuk berjalan. Silakan coba kembali lagi nanti</string>
+    <string name="request_error_dialog_okay_button">Saya paham, tutup aplikasi</string>
 
 </resources>

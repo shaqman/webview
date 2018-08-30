@@ -1,8 +1,15 @@
 package com.example.app;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.view.View;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -12,6 +19,8 @@ public class MainActivity extends Activity {
     private final static String schema = "http";
     private final static String domain = "example.com";
     private final static String url = schema + "://" + domain;
+
+    private boolean isPageError = false;
 
     private WebView mWebView;
     private ConstraintLayout mLayout;
@@ -46,10 +55,29 @@ public class MainActivity extends Activity {
 //            }
 //
 //            @Override
-//            public void onPageFinished(WebView view, String url) {
-//                super.onPageFinished(view, url);
-//                mLayout.setVisibility(View.GONE);
-//                mWebView.setVisibility(View.VISIBLE);
+//            public void onPageCommitVisible(WebView view, String url) {
+//                super.onPageCommitVisible(view, url);
+//                if(!isPageError) {
+//                    mLayout.setVisibility(View.GONE);
+//                    mWebView.setVisibility(View.VISIBLE);
+//                }
+//            }
+//
+//            @Override
+//            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+//                super.onReceivedError(view, request, error);
+//                isPageError = true;
+//                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+//                builder.setMessage(R.string.request_error_dialog_message)
+//                        .setTitle(R.string.request_error_dialog_title)
+//                        .setPositiveButton(R.string.request_error_dialog_okay_button, new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int id) {
+//                                MainActivity.this.finishAndRemoveTask();
+//                            }
+//                        });
+//
+//                AlertDialog dialog = builder.create();
+//                dialog.show();
 //            }
 //        });
 
